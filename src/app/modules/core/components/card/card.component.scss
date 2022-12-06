@@ -1,0 +1,53 @@
+.card{
+  width: 364px;
+  height: 200px;
+  background-color: var(--cc-purple);
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 12px 10px;
+  margin: auto;
+  position: relative;
+  .chip{
+    width: 48px;
+    height: 32px;
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url("../../../../../assets/images/chip.svg") no-repeat;
+    background-size: contain;
+  }
+  .card-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .card-type{
+      font-size: 14px;
+      font-weight: 500;
+      color: #646578;
+    }
+    .card-number{
+      font-size: 14px;
+      font-weight: 500;
+      color: #E4E4E4;
+    }
+  }
+  .card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .card-holder{
+      font-size: 14px;
+      font-weight: 500;
+      color: #646578;
+    }
+    .card-expiry{
+      font-size: 14px;
+      font-weight: 500;
+      color: #646578;
+    }
+  }
+}

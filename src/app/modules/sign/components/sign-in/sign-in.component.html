@@ -1,0 +1,40 @@
+<div class="shapes">
+  <div class="circle top"></div>
+  <div class="circle bottom"></div>
+</div>
+
+<div class="header">
+  <h1>Sign in</h1>
+</div>
+<div class="form-wrapper">
+  <div class="title">
+    <h2>Welcome back</h2>
+    <p>Hello there, Sign in to continue</p>
+  </div>
+  <div class="form">
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <div class="inputfield" [ngClass]="{error: loginForm.get(LoginFormTypes.EMAIL)?.invalid && loginForm.get(LoginFormTypes.EMAIL)?.touched}">
+        <label>Email Address</label>
+        <input type="text" class="input" [formControlName]="LoginFormTypes.EMAIL">
+        <ng-container *ngIf="loginForm.get(LoginFormTypes.EMAIL)?.invalid && loginForm.get(LoginFormTypes.EMAIL)?.touched">
+          <span *ngIf="loginForm?.get(LoginFormTypes.EMAIL)?.getError('required')" class="error">Email is required</span>
+          <span *ngIf="loginForm?.get(LoginFormTypes.EMAIL)?.getError('email')" class="error">Email is invalid</span>
+        </ng-container>
+      </div>
+      <div class="inputfield" [ngClass]="{error: loginForm.get(LoginFormTypes.PASSWORD)?.invalid && loginForm.get(LoginFormTypes.PASSWORD)?.touched}">
+        <label>Password</label>
+        <input type="password" class="input" [formControlName]="LoginFormTypes.PASSWORD">
+        <ng-container *ngIf="loginForm.get(LoginFormTypes.PASSWORD)?.invalid && loginForm.get(LoginFormTypes.PASSWORD)?.touched">
+          <span *ngIf="loginForm?.get(LoginFormTypes.PASSWORD)?.getError('required')" class="error">Password is required</span>
+          <span *ngIf="loginForm?.get(LoginFormTypes.PASSWORD)?.getError('minlength')" class="error">Password must be at least 6 characters</span>
+        </ng-container>
+      </div>
+      <a class="forget">Forget Password</a>
+      <button class="primary">
+        Sign in
+      </button>
+    </form>
+
+    <span class="sign-up">Already have an account? <a>Sign up</a></span>
+  </div>
+</div>

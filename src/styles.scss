@@ -1,1 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
+// Import roboto font for all weights
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  *{
+    box-sizing: border-box;
+  }
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.inputfield {
+  display: flex;
+  flex-flow: column;
+  border: solid 1px #646578;
+  border-radius: 6px;
+  position: relative;
+  &.error{
+    border: solid 1px #F44336;
+    label{
+      color: #F44336;
+    }
+  }
+  span.error{
+    position: absolute;
+    top: -10px;
+    right: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #F44336;
+    background-color: #E4E4E4;
+  }
+  label {
+    font-size: 15px;
+    font-weight: 300;
+    color: #646578;
+    padding: 0;
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    background-color: #E4E4E4;
+  }
+  input{
+    border: none;
+    outline: none;
+    background: none;
+    min-height: 40px;
+    padding-left: 6px;
+    font-size: 14px;
+  }
+  &:not(:first-child){
+    margin-top: 18px;
+  }
+
+  &:focus-within:not(.error){
+    border: solid 1px #1F203F;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
+  &.primary{
+    background-color: #1F203F;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+    &:hover{
+      background-color: #2C2E4F;
+    }
+  }
+}
+
+// global variables for colors pastel colors
+:root{
+  --cc-purple: #6673FF;
+  --cc-magenta: #BF1363;
+  --cc-blue: #0E79B2;
+  --cc-green: #74a57f;
+  --cc-orange: #f39237;
+  --cc-black: #191923;
+  --cc-gray: #646578;
+  --cc-auburn: #9e2a2b;
+  --cc-rosewood: #540b0e;
+  --cc-dark-byzantium: #4d243d;
+  --cc-persian-blue: #253d5b;
+  --cc-puce: #c6878f;
+  --green-sheen: #68b0ab;
+  --cc-blue-green: #034c3c;
+  --cc-amazon: #417b5a;
+  --cc-carmine-m-p: #d62246;
+  --cc-keppel: #49beaa;
+  --cc-queen-blue: #456990;
+}

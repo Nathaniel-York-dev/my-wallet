@@ -1,0 +1,5 @@
+<div class="app-wrapper">
+  <router-outlet></router-outlet>
+  <app-navigation-bar *ngIf="show$ | async"></app-navigation-bar>
+</div>
+<app-loader *ngIf="busyService.isBusy$ | async"></app-loader>

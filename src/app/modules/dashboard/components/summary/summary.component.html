@@ -1,0 +1,28 @@
+<ng-container *ngIf="dataTransferService.data$ | async as data">
+  <div class="head">
+    My Wallet
+  </div>
+  <div class="cards-wrapper">
+    <app-card [card]="card" *ngFor="let card of data.cards"></app-card>
+  </div>
+  <div class="current-balance">
+    <div class="title">
+      Current Balance:
+    </div>
+    <div class="amount">
+      {{ data.balance | currency: 'USD' : 'symbol' : '1.2-2' }}
+    </div>
+  </div>
+  <div class="transactions-title">
+    Recent transactions
+  </div>
+  <div class="transaction-wrapper">
+    <div class="transaction-list">
+      <div class="transaction" *ngFor="let transaction of data.transactions">
+        <div class="title">{{transaction.description}}</div>
+        <div class="amount">{{transaction.amount | currency: 'USD': 'symbol': '1.2-2'}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
